@@ -62,6 +62,7 @@ Route::post("register", "Auth\CustomerLoginController@postRegister")->name('inde
 //home
 Route::get('/','IndexHomeController@getHome')->name('index.home.get');
 //movies
+Route::get('getMovieByKey','IndexMovieController@getByKey')->name('index.movie.cs.get');
 Route::get('coming_soon.html','IndexMovieController@getCSMovies')->name('index.movie.cs.get');
 Route::get('now_showing.html','IndexMovieController@getNSMovies')->name('index.movie.ns.get');
 //detail movie

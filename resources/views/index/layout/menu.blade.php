@@ -37,8 +37,8 @@
                                 <li>
                                     <div class="col-sm-6">
                                         <ul class="multi-column-dropdown">
-                                            <li><a href="">Tài khoản CGV</a></li>
-                                            <li><a href="">Quyền lợi</a></li>
+                                            <li><a href="/user/profile">Thông tin</a></li>
+                                            <li><a href="/user/invoice">Hóa đơn</a></li>
                                         </ul>
                                     </div>
                                     <div class="clearfix"></div>

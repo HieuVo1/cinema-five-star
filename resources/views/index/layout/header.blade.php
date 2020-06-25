@@ -4,8 +4,8 @@
             <a href="{{route('index.home.get')}}"><h1>Cini<span>Movies</span></h1></a>
         </div>
         <div class="w3_search">
-            <form action="#" method="post">
-                <input type="text" name="Search" placeholder="Search" required="">
+            <form action="/getMovieByKey" method="get">
+                <input type="text" name="key" placeholder="Search" required="">
                 <input type="submit" value="Go">
             </form>
         </div>

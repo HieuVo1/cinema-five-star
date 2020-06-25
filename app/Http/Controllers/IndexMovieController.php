@@ -5,13 +5,19 @@ namespace App\Http\Controllers;
 use App\Movie;
 use App\SP;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
 class IndexMovieController extends Controller
 {
     //
     public function getNSMovies() {
         $ns_movies = SP::getNSMovies();
         return view('index.movie.now_showing',compact('ns_movies'));
+    }
+    public function getByKey() {
+        $keywork = Input::get('key');
+        $ns_movies = SP::getByKey($keywork);
+        return view('index.movie.now_showing',compact('ns_movies'));
+        
     }
 
     public function getCSMovies() {

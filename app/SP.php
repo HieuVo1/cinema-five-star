@@ -21,6 +21,9 @@ class SP extends Model
     public static function getNSMovies() {
         return DB::select("CALL `get_movies_now_showing`()");
     }
+    public static function getByKey($keyword) {
+        return DB::select("CALL `get_movies_by_keywork`(?)",array($keyword));
+    }
 
     public static function getCSMovies() {
         return DB::select("CALL `get_movies_coming_soon`()");

@@ -25,21 +25,22 @@ class PaymentController extends Controller
 
     protected function convertCurrency($amount, $from_currency = "VND", $to_currency = "USD")
     {
-//        $apikey = 'your-api-key-here';
+//         $apikey = '120b7cb5ad70a8ea7ed0';
 
-        $from_Currency = urlencode($from_currency);
-        $to_Currency = urlencode($to_currency);
-        $query = "{$from_Currency}_{$to_Currency}";
+//         $from_Currency = urlencode($from_currency);
+//         $to_Currency = urlencode($to_currency);
+//         $query = "{$from_Currency}_{$to_Currency}";
 
-        $json = file_get_contents("https://free.currencyconverterapi.com/api/v6/convert?q={$query}&compact=y");
-        $obj = json_decode($json, true);
+//         $json = file_get_contents("https://free.currconv.com/api/v7/convert?q=$query&compact=ultra&apiKey=$apikey");
+//         $obj = json_decode($json, true);
 
-//        $val = floatval($obj["$query"]);
+// //        $val = floatval($obj["$query"]);
 
-        $val = floatval($obj['VND_USD']['val']);
-        $total = $val * $amount;
-        return number_format($total, 2, '.', '');
-//        return $total;
+//         $val = floatval($obj['VND_USD']['val']);
+//         $total = $val * $amount;
+//         echo number_format($total, 2, '.', '');
+//         die;
+       return $amount/23000;
     }
 
     public function getPayment()
