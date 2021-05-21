@@ -25,15 +25,16 @@
                             </div>
                             <div class="form">
                                 <h3>Tạo tài khoản</h3>
-                                <form action="#" method="post">
-                                    <input type="text" name="Username" placeholder="Username" required="">
-                                    <input type="password" name="Password" placeholder="Password" required="">
-                                    <input type="email" name="Email" placeholder="Email Address" required="">
-                                    <input type="text" name="Phone" placeholder="Phone Number" required="">
+                                <form action="{{route('index.register.post')}}" method="post">
+                                {{csrf_field()}}
+                                    <input type="text" name="username" placeholder="Username" required="">
+                                    <input type="password" name="password" placeholder="Password" required="">
+                                    <input type="email" name="email" placeholder="Email Address" required="">
+                                    <input type="text" name="phone" placeholder="Phone Number" required="">
                                     <input type="submit" value="Đăng ký">
                                 </form>
                             </div>
-                            <div class="cta"><a href="#">Quên mật khẩu?</a></div>
+                            <div class="cta"><a href="{{route('index.sendcode.get')}}">Quên mật khẩu?</a></div>
                         </div>
                     </div>
                 </div>

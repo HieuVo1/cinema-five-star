@@ -26,6 +26,7 @@ Route::post("cms/login", "Auth\AdminLoginController@postlogin")->name('cms.login
 Route::group(['prefix' => 'cms', 'middleware' => 'adminLogin'], function () {
 
     Route::get("trangchu", "AdminController@index")->name('cms.trangchu')->middleware('adminLogin');
+    Route::get("text", "AdminController@getRevenue")->name('cms.text')->middleware('adminLogin');
 });
 
 Route::post("loadprojector", "TestController@loadprojector")->name('loadprojector');
@@ -58,6 +59,15 @@ Route::get("logout", "Auth\CustomerLoginController@getLogout")->name('index.logo
 //register
 Route::get("register", "Auth\CustomerLoginController@getRegister")->name('index.register.get');
 Route::post("register", "Auth\CustomerLoginController@postRegister")->name('index.register.post');
+Route::get("confirm/{email}", "Auth\CustomerLoginController@confirm")->name('index.confirm.get');
+Route::get("sendcode", "Auth\CustomerLoginController@getSendcode")->name('index.sendcode.get');
+Route::post("sendcode", "Auth\CustomerLoginController@postSendcode")->name('index.sendcode.post');
+
+Route::get("verify", "Auth\CustomerLoginController@getVerify")->name('index.verify.get');
+Route::post("verify", "Auth\CustomerLoginController@postVerify")->name('index.verify.post');
+
+Route::get("reset", "Auth\CustomerLoginController@getReset")->name('index.reset.get');
+Route::post("reset", "Auth\CustomerLoginController@postReset")->name('index.reset.post');
 
 //home
 Route::get('/','IndexHomeController@getHome')->name('index.home.get');
